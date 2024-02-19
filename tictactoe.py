@@ -1,5 +1,5 @@
-import random
 from tkinter import *
+import secrets
 
 #buttons:
 #2d array that represents a grid, initalized to 0 for gameboard. will contain 'Button' type objects
@@ -124,7 +124,7 @@ def new_game():
     global player
 
     #reset and randomize players turn
-    player = random.choice(players)
+    player = secrets.SystemRandom().choice(players)
     label.config(text=player+"'s turn")
 
     #reset tile text and colors
@@ -141,7 +141,7 @@ window.title("Tic-Tac-Toe game")
 players = ["x", "o"]
 
 #choose a random player to begin the game
-player = random.choice(players) 
+player = secrets.SystemRandom().choice(players) 
 
 # a label to indicate whos turn it is
 label = Label(text = player + "'s turn", font = ('consolas', 40)) 
